@@ -2,7 +2,11 @@ import React from 'react'
 
 const App = () => {
   return (
-    <div className='h-10 w-10 bg-red-900'>Hello</div>
+    <div className=' bg-black h-screen p-4 text-white'>
+      <button className='bg-green-600 mb-4 px-5 py-2 rounded text-white'>
+        Get Data
+      </button>
+    </div>
   )
 }
 
