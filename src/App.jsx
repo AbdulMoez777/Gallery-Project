@@ -24,7 +24,7 @@ const App = () => {
   if (userData.length > 0) {
     PrintuserData = userData.map(function (elem, idx) {
       return <div key={idx}>
-        <Card elem={elem}/>
+        <Card elem={elem} />
       </div>
     }
     )
@@ -36,26 +36,31 @@ const App = () => {
   return (
     <div className='bg-black min-h-screen p-4 text-white flex flex-col'>
       {/* <h1 className='fixed'>{index}</h1> */}
-      <div className='flex flex-wrap gap-4 p-2 flex-grow'>
+      <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 p-2 flex-grow'>
         {PrintuserData}
       </div>
 
       <div className='flex  justify-center items-center p-4 gap-6'>
         <button
+          style={{ opacity: index == 1 ? 0.5 : 1 }}
+          className='bg-amber-400 text-sm cursor-pointer active:scale-95 text-black px-6 py-2 rounded font-semibold'
           onClick={() => {
             if (index > 1) {
               setUserData([])
               setIndex(index - 1)
             }
           }}
-          className='bg-amber-400 text-sm cursor-pointer active:scale-95 text-black px-2 py-2 rounded font-semibold'>Prev</button>
+        >Prev</button>
+
+        <h4>Page{index}</h4>
         <button
+          className='bg-amber-400 text-sm cursor-pointer active:scale-95 text-black px-6 py-2 rounded font-semibold'
           onClick={() => {
             setUserData([])
             setIndex(index + 1)
 
           }}
-          className='bg-amber-400 text-sm cursor-pointer active:scale-95 text-black px-2 py-2 rounded font-semibold'>Next</button>
+        >Next</button>
       </div>
 
     </div>
